@@ -1,0 +1,48 @@
+{
+    "env": {
+      "production": {
+        "plugins": [
+          "transform-object-rest-spread",
+          "transform-strict-mode"
+        ],
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": [
+                  "last 2 versions"
+                ]
+              },
+              "modules": false
+            }
+          ],
+          "react"
+        ],
+        "minified": true,
+        "comments": false,
+        "compact": true
+      },
+      "development": {
+        "plugins": [
+          "transform-object-rest-spread",
+          "transform-strict-mode"
+        ],
+        "presets": [
+          [
+            "env",
+            {
+              "debug": true,
+              "targets": {
+                "browsers": [
+                  "last 2 versions"
+                ]
+              },
+              "modules": false
+            }
+          ],
+          "react"
+        ]
+      }
+    }
+  }

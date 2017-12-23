@@ -1,0 +1,10 @@
+node_modules
+npm-debug.log
+
+*.sublime-*
+.idea
+.vscode
+
+.gitconfig
+
+**/public

@@ -1,0 +1,60 @@
+{
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "eslint-config-google"
+  ],  
+  "env": {
+    "browser": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "comma-dangle": [
+      1, "always-multiline"
+    ],
+    "id-length": ["warn", {
+      "min": 3,
+      "max": 30,
+      "properties": "never",
+      // a, b - common parameter names in sorting comparison helper functions
+      // e - exception
+      // $, _ - libraries
+      "exceptions": ["a", "b", "e", "_"]
+    }],
+    "require-jsdoc": "off",
+    "space-before-function-paren": ["error", {
+      "named": "never"
+    }],
+    "max-len": ["warn", {
+      "tabWidth": 2,
+      "ignoreComments": true,
+      "ignoreUrls": true,
+      "ignorePattern": "^import (.+ from )?'.+';$"
+    }],
+    "quotes": [1, "single", {
+      "avoidEscape": true
+    }],
+    "no-implicit-coercion": ["error"],
+    "no-inline-comments": "off",
+    "no-invalid-this": "error",
+    "no-negated-condition": "off",
+    "prefer-rest-params": "warn",
+    "quote-props": ["error", "as-needed", {
+      "numbers": true,
+      "keywords": true
+    }],
+    "new-cap":["error", {
+      "capIsNew": false
+    }]
+  }
+}

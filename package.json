@@ -1,0 +1,30 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "Custom implementation of Blockchain.",
+  "main": "src/index.js",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "js-sha256": "^0.7.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.13.1",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.5.1",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "build": "webpack --profile --progress",
+    "watch": "webpack --watch --profile --progress"
+  },
+  "author": "iSokrat",
+  "license": "MIT"
+}
