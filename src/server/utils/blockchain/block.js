@@ -1,13 +1,9 @@
 module.exports = class Block {
-    constructor(index, transactions, proof, previousHash) {
-        this._index = index;
-        this._timestamp = Date.now();
-        this._transactions = transactions;
-        this._proof = proof;
-        this._previousHash = previousHash;
-    }
-
-    get index() {
-        return this._index;
-    }
+  constructor(index, transactions, proof, previousHash) {
+    this.index = index;
+    this.timestamp = Date.now();
+    this.transactions = transactions;
+    this.proof = proof;
+    this.previousHash = previousHash;
+  }
 };
