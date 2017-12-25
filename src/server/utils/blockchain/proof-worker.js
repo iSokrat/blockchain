@@ -1,4 +1,4 @@
-const sha256 = require('sha256');
+const sha256 = require('js-sha256');
 
 module.exports = class ProofWorker {
     constructor(confirmSequence = '0') {
