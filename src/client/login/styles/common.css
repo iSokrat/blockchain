@@ -1,0 +1,46 @@
+.text-primary {
+  color: #F79504;
+}
+
+.text-xlg {
+  font-size: 3rem;
+  letter-spacing: -2px;
+}
+
+.i-btn  {
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.i-btn-primary {
+  border-color: #F79504;
+  background-color: #825E24;
+  color: white;
+  transition: background-color .1s;
+}
+
+.i-btn-primary:hover {
+  background-color: #F79504;
+}
+
+.i-btn-lg {
+  font-size: 1rem;
+  padding: 10px 21px;
+  font-weight: bold;
+}
+
+.i-btn-group {
+  display: flex;
+}
+
+.i-btn-group .i-btn {
+  width: 150px;
+}
+
+.i-btn-group :not(:first-child) {
+  margin-left: 12px;
+}

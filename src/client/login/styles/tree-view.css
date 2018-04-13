@@ -1,0 +1,32 @@
+.tree-view {
+  color: #CBCDCE;
+}
+
+.tree-view .tree-item {
+  display: flex;
+  padding: 10px 42px 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #5e6369;
+  background-color: #373E44;
+}
+
+.tree-view .tree-item:first-of-type {
+  border-top: 1px solid #5E6369;
+}
+
+.tree-view .tree-item .tree-item__column {
+  flex: 1 1;
+  padding: 0 10px;
+}
+
+.tree-view .tree-item .tree-item__column .tree-item__column_line-limit {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.tree-view .tree-item .tree-item__column.tree-item__column_small {
+  flex: 0 1 2%;
+}

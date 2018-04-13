@@ -1,0 +1,17 @@
+.tab-panel .tab-panel__nav {
+  display: flex;
+  justify-content: center;
+}
+
+.tab-panel .tab-panel__nav .tab-panel__nav-item {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #A9ACB3;
+  margin: 0 24px;
+  padding: 4px 0;
+}
+
+.tab-panel .tab-panel__nav .tab-panel__nav-item.tab-panel__nav-item_active {
+  color: #F79504;
+  font-weight: bold;
+}

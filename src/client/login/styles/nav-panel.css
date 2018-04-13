@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+}
+
+.nav-panel {
+  background-color: #484D53;
+}
+
+.nav-panel .nav-panel__lead {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.nav-panel .nav-panel__text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: -1px;
+  padding: 12px 0;
+  font-weight: normal;
+}
+
+.nav-panel .nav-panel__text:before {
+  content: '$';
+}
+
+.nav-panel .nav-panel__text:after {
+  content: 'USD';
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-menu .nav-menu__item {
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  color: #A9ACB3;
+  text-decoration: none;
+  padding: 0 12px 0 36px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nav-menu .nav-menu__item-icon {
+  margin-right: 5px;
+}
+
+.nav-menu .nav-menu__item.nav-menu__item_active {
+  border-top: 1px solid #5E6369;
+  background-color: #373E44;
+  color: #fff;
+}

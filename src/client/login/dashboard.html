@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/dashboard.css">
+  <link rel="stylesheet" href="./styles/nav-panel.css">
+  <link rel="stylesheet" href="./styles/tree-view.css">
+  <link rel="stylesheet" href="./styles/tab-panel.css">
+  <link rel="stylesheet" href="./styles/preview.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+  <link rel="stylesheet" href="./styles/common.css">
+  <script src="https://use.fontawesome.com/f1c2316b21.js" async></script>
+</head>
+<body>
+  <div class="content-grid">
+    <header class="nav-panel">
+      <div class="nav-panel__lead">
+        Blockchain
+      </div>
+      <h2 class="nav-panel__text">
+        25, 348
+      </h2>
+      <nav class="nav-menu">
+        <a class="nav-menu__item" href="#exchange">
+          <span class="fa fa-user-o nav-menu__item-icon" aria-hidden="true"></span>
+          Profile
+        </a>
+        <a class="nav-menu__item nav-menu__item_active" href="#wallet">
+          <span class="fa fa-credit-card nav-menu__item-icon" aria-hidden="true"></span>
+          Wallet
+        </a>
+      </nav>
+    </header>
+    <main class="main">
+      <div class="preview">
+        <div class="preview__row">
+          <span class="fa fa-usd fa-2x" aria-hidden="true"></span>
+        </div>
+        <div class="preview__row">
+          <h2>
+            <span class="text-primary text-xlg">
+              19.123213213
+            </span>
+            <span class="text-primary">
+              BTC
+            </span>
+          </h2>
+        </div>
+        <div class="preview__row">
+          <span>
+            8,311.52 USD
+          </span>
+        </div>
+        <div class="preview__row">
+          <div class="i-btn-group">
+            <button class="i-btn i-btn-primary i-btn-lg">Send</button>
+            <button class="i-btn i-btn-primary i-btn-lg">Receive</button>
+          </div>
+        </div>
+      </div>
+      <section class="tab-panel">
+        <nav class="tab-panel__nav">
+          <a class="tab-panel__nav-item tab-panel__nav-item_active" href="#1">All</a>
+          <a class="tab-panel__nav-item" href="#2">Sent</a>
+          <a class="tab-panel__nav-item" href="#4">Received</a>
+          <a class="tab-panel__nav-item" href="#4">Exchanged</a>
+        </nav>
+        <div class="tab-panel__tabs">
+          <div class="tab-panel__tab">
+            <div class="tree-view">
+              <div class="tree-item">
+                <div class="tree-item__column tree-item__column_small">
+                  <span class="fa fa-paper-plane-o fa-lg" aria-hidden="true"></span>
+                </div>
+                <div class="tree-item__column">
+                  <div class="tree-item__column_line-limit">
+                    Colsdf
+                    <strong class="text-primary">
+                      .0012312343 BTC
+                    </strong>
+                    ($7.123)
+                  </div>
+                </div>
+                <div class="tree-item__column">
+                  <div class="tree-item__column_line-limit">
+                    Unconfirmed
+                  </div>
+                </div>
+                <div class="tree-item__column">
+                  <div class="tree-item__column_line-limit">
+                    1 Minute Ago
+                  </div>
+                </div>
+                <div class="tree-item__column tree-item__column_small">
+                  <span class="fa fa-hourglass-o fa-lg fa-spin" aria-hidden="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <dialog class="modal modal" open>
+    <form action="dialog">
+      <label for="">To:</label>
+      <input type="text">
+      <button class="i-btn i-btn-primary" type="submit">Send</button>
+    </form>
+  </dialog>
+</body>
+</html>

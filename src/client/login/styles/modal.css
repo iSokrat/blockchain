@@ -1,0 +1,7 @@
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  background-color: #484D53;
+}
