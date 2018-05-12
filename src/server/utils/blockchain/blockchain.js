@@ -9,8 +9,6 @@ module.exports = class Blockchain {
     constructor({
       proofWorker = new ProofWorker('0'),
     }) {
-        this._currentTransactions = [];
-        this._chain = [];
         this._proofWorker = proofWorker;
         this._nodes = new Set();
         this.makeNewBlock(100, 1);
@@ -20,30 +18,31 @@ module.exports = class Blockchain {
       this._nodes.add(address);
     }
 
-    makeNewBlock(
+    async makeNewBlock(
       proof,
       previousHash
     ) {
-        const chain = this._chain;
-        const indexForBlock = chain.length + 1;
-        const transactions = this._currentTransactions;
+        const chainLength = await Block.chainLength();
+        const indexForBlock = chainLength + 1;
+        const transactions = await Transaction.currentTransactions();
         const newBlock = new Block(
             indexForBlock,
             transactions,
             proof,
             previousHash
         );
+        newBlock.save();
 
-        this._currentTransactions = [];
-        this._chain.push(newBlock);
+        Transaction.removeAllTransactions();
 
         return newBlock;
     }
 
-    makeNewTransaction(sender, recipient, amount) {
+    async makeNewTransaction(sender, recipient, amount) {
         const newTransaction = new Transaction(sender, recipient, amount);
-        this._currentTransactions.push(newTransaction);
-        return this.lastBlock.index + 1;
+        newTransaction.save();
+        const lastBlock = await this.lastBlock;
+        return lastBlock.index + 1;
     }
 
     isValidChain(chain) {
@@ -78,7 +77,7 @@ module.exports = class Blockchain {
 
     async resolveConflicts() {
       const nodes = this._nodes;
-      const chain = this.chain;
+      const chain = await this.chain;
       let chainWithMaxLength = chain;
 
       for (const node of nodes) {
@@ -114,17 +113,15 @@ module.exports = class Blockchain {
     }
 
     get lastBlock() {
-        const chain = this._chain;
-        const lastIndex = chain.length - 1;
-        return chain[lastIndex];
+        return Block.chain().then((chain) => chain[chain.length-1]);
     }
 
     get chain() {
-      return this._chain;
+      return Block.chain();
     }
 
     set chain(newChain) {
-      this._chain = newChain;
+      Block.replaceChain(newChain);
     }
 
     get proofWorker() {

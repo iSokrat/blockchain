@@ -1,5 +1,5 @@
 const express = require('express');
-const blockchain = require('../setup//blockchain');
+const blockchain = require('../setup/blockchain');
 const router = express.Router();
 
 router.put('/register', (req, res) => {

@@ -3,6 +3,6 @@ const app = require('../app.js');
 const server = http.createServer(app);
 const port = process.env.PORT || 3000;
 
-server.listen(port, () => {
-  console.log(`Server is ready on ${port}.`);
+module.exports = new Promise((res, rej) => {
+  server.listen(port, res);
 });

@@ -7,17 +7,15 @@ const blockchain = require('../setup/blockchain');
 
 const nodeId = uuidv4();
 
-router.put('/mine', (req, res) => {
-  const {
-    lastBlock,
-    proofWorker,
-  } = blockchain;
+router.put('/mine', async (req, res) => {
+  const {proofWorker} = blockchain;
+  const lastBlock = await blockchain.lastBlock;
   const {proof: lastProof} = lastBlock;
   const newProof = proofWorker.computeProof(lastProof);
 
   const blockchainId = '0';
   const rewardAmount = 1;
-  blockchain.makeNewTransaction(blockchainId, nodeId, rewardAmount);
+  await blockchain.makeNewTransaction(blockchainId, nodeId, rewardAmount);
 
   const builtBlock = blockchain.makeNewBlock(
     newProof,
@@ -35,7 +33,7 @@ router.put('/mine', (req, res) => {
     .send(result);
 });
 
-router.put('/transaction/new', (req, res) => {
+router.put('/transaction/new', async (req, res) => {
   const reqBody = req.body;
   const mandatoryFields = [
     'sender',
@@ -54,7 +52,7 @@ router.put('/transaction/new', (req, res) => {
     return;
   }
 
-  const blockIndex = blockchain.makeNewTransaction(
+  const blockIndex = await blockchain.makeNewTransaction(
     reqBody.sender,
     reqBody.recipient,
     reqBody.amount
@@ -65,8 +63,8 @@ router.put('/transaction/new', (req, res) => {
     .send({message: `Transaction will be added to the block [${blockIndex}]`});
 });
 
-router.get('/chain', (req, res) => {
-  const chain = blockchain.chain;
+router.get('/chain', async (req, res) => {
+  const chain = await blockchain.chain;
   res.send({
     chain,
     length: chain.length,
